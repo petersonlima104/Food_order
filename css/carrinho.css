@@ -1,0 +1,44 @@
+body {
+  background-color: #faf8f8;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-content {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}

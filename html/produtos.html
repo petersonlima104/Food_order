@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/produtos.css" />
+
+    <title>Unic Store</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/index.html">
+        <img src="/img/Grande.png" alt="Logo da La Pizza" class="logo-img" />
+        La Pizza
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Inicio</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="produtos.html">Produtos</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="carrinho.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span
+                id="cart-item-count"
+                class="badge badge-light cart-item-count"
+                >0</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Pizzas</h1>
+
+      <form id="pizzaForm">
+        <!-- Formulário de escolha de pizzas e bebidas -->
+
+        <div class="form-group">
+          <label class="primary" for="pizzaSize">Escolha o Tamanho:</label>
+          <div class="row">
+            <div class="col-md-4 elementBorderTop">
+              <label class="title">
+                <input type="radio" name="pizzaSize" value="Pequena" />
+                Pequena
+                <br />
+                <p>R$ 30,00</p>
+                <img src="/img/Pequena.png" alt="Pizza Pequena" />
+              </label>
+            </div>
+            <div class="col-md-4 elementBorderTop">
+              <label class="title">
+                <input type="radio" name="pizzaSize" value="Media" />
+                Média
+                <br />
+                <p>R$ 50,00</p>
+                <img src="/img/Media.png" alt="Pizza Média" />
+              </label>
+            </div>
+            <div class="col-md-4 elementBorderTop">
+              <label class="title">
+                <input type="radio" name="pizzaSize" value="Grande" />
+                Grande
+                <br />
+                <p>R$ 80,00</p>
+                <img src="/img/Grande.png" alt="Pizza Grande" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="primary" for="pizzaFlavors"
+            >Escolha os Sabores (4 sabores):</label
+          >
+          <div class="row">
+            <div class="col-md-12 elementBorder elementBorderTop">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Margherita" />
+                Margherita
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo, tomate e manjericão
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Calabresa" />
+                Calabresa
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo, calabresa em rodelas,
+                  cebola, tomate picado, azeite e orégano
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="pizzaFlavor"
+                  value="Quatro Queijos"
+                />
+                Quatro Queijos
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, muçarela, gorgonzola, parmesão
+                  e catupiry
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Portuguesa" />
+                Portuguesa
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo, azeitona, ovo cozido,
+                  presunto cozido, cebola, ervilha e azeite
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="pizzaFlavor"
+                  value="Frango com Catupiry"
+                />
+                Frango com Catupiry
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo muçarela, frango,
+                  catupiry e sálvia
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Muçarela" />
+                Muçarela
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo muçarela, azeitona,
+                  rodelas de tomate e orégano
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Mexicana" />
+                Mexicana
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, nachos, carne moída apimentada,
+                  cheddar, muçarela e requeijão
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="pizzaFlavor"
+                  value="Filé com Fritas"
+                />
+                Filé com Fritas
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo muçarela, filé mignon,
+                  orégano e batata frita
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Coração" />
+                Coração
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo muçarela, coração de
+                  galinha, salsa e cebolinha picada
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="pizzaFlavor"
+                  value="Filé com Palha"
+                />
+                Filé com Palha
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, queijo muçarela, filé mignon,
+                  orégano e batata palha
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Camarão" />
+                Camarão
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Molho de tomate, muçarela, camarão, queijo
+                  parmesão e manjericão
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="pizzaFlavor"
+                  value="Chocolate Preto"
+                />
+                Chocolate Preto
+                <br />
+                <p class="subTitle">Ingredientes: queijo, Chocolate Preto</p>
+              </label>
+            </div>
+
+            <div class="col-md-12 elementBorder">
+              <label class="title">
+                <input type="checkbox" name="pizzaFlavor" value="Brigadeiro" />
+                Brigadeiro
+                <br />
+                <p class="subTitle">
+                  Ingredientes: Queijo, chocolate preto e Brigadeiro
+                </p>
+              </label>
+            </div>
+
+            <div class="col-md-12">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="pizzaFlavor"
+                  value="Chocolate Branco"
+                />
+                Chocolate Branco
+                <br />
+                <p class="subTitle">Ingredientes: Queijo, Chocolate Branco</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="primary" for="drinks">Bebibas:</label>
+          <div class="row">
+            <div class="col-md-3">
+              <label class="title">
+                <input type="checkbox" name="drinks" value="Sem_bebida" />
+                Sem Bebida
+                <br />
+                <img src="/img/vazio.png" alt="Sem Bebida" />
+              </label>
+            </div>
+
+            <div class="col-md-3">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="drinks"
+                  value="Coca-cola 2 litros"
+                />
+                Coca-cola 2 litros
+                <br />
+                <p>R$ 12,00</p>
+                <img src="/img/coca.png" alt="Coca-cola 2 litros" />
+              </label>
+            </div>
+
+            <div class="col-md-3">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="drinks"
+                  value="Graraná Antartica 2 litros"
+                />
+                Graraná Antartica 2 litros
+                <br />
+                <p>R$ 10,00</p>
+                <img src="/img/guarana.png" alt="Graraná Antartica 2 litros" />
+              </label>
+            </div>
+
+            <div class="col-md-3">
+              <label class="title">
+                <input
+                  type="checkbox"
+                  name="drinks"
+                  value="Fanta Laranja 2 litros"
+                />
+                Fanta Laranja 2 litros
+                <br />
+                <p>R$ 10,00</p>
+                <img src="/img/fanta.png" alt="Fanta Laranja 2 litros" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Adicionar ao Carrinho
+        </button>
+      </form>
+
+      <!-- Modal para exibir a mensagem de aviso -->
+      <div
+        class="modal fade"
+        id="warningModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="warningModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="warningModalLabel">Aviso</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Fechar"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Por favor, selecione pelo menos um elemento de cada subtopico para
+              adicionar ao carrinho.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para exibir a mensagem de item adicionado ao carrinho -->
+      <div
+        class="modal fade"
+        id="successModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="successModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="successModalLabel">
+                Item Adicionado ao Carrinho
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Fechar"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Seu item foi adicionado ao carrinho com sucesso!
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Continuar Comprando
+              </button>
+              <a href="carrinho.html" class="btn btn-secondary"
+                >Ir até o Carrinho</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/produtos.js"></script>
+  </body>
+</html>

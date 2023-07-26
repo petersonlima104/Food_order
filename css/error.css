@@ -1,0 +1,18 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.maintenance-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.maintenance-image {
+  width: 480px;
+  height: 460px;
+  margin-bottom: 30px;
+}
