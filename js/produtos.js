@@ -14,8 +14,13 @@ document
     var pizzaSize = document.querySelector(
       'input[name="pizzaSize"]:checked'
     ).value;
+
     var pizzaFlavors = Array.from(
       document.querySelectorAll('input[name="pizzaFlavor"]:checked')
+    ).map((option) => option.value);
+
+    var pizzaBorder = Array.from(
+      document.querySelectorAll('input[name="pizzaBorder"]:checked')
     ).map((option) => option.value);
 
     var drinks = Array.from(
@@ -25,6 +30,7 @@ document
     var pizza = {
       size: pizzaSize,
       flavors: pizzaFlavors,
+      border: pizzaBorder,
       drinks: drinks,
     };
 
@@ -46,6 +52,21 @@ checkboxes.forEach(function (checkbox) {
   });
 });
 
+var checkboxesBorder = document.querySelectorAll('input[name="pizzaBorder"]');
+var maxAllowedBorder = 1;
+
+checkboxesBorder.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    var checkedCountBorder = document.querySelectorAll(
+      'input[name="pizzaBorder"]:checked'
+    ).length;
+
+    if (checkedCountBorder > maxAllowedBorder) {
+      this.checked = false;
+    }
+  });
+});
+
 function addToCart(pizza) {
   var cartItems = localStorage.getItem("cartItems");
   var cartItemsArray = cartItems ? JSON.parse(cartItems) : [];
@@ -55,6 +76,8 @@ function addToCart(pizza) {
     !pizza.size ||
     !Array.isArray(pizza.flavors) ||
     pizza.flavors.length === 0 ||
+    !Array.isArray(pizza.border) ||
+    pizza.border.length === 0 ||
     !Array.isArray(pizza.drinks) ||
     pizza.drinks.length === 0
   ) {
@@ -91,7 +114,7 @@ function selectedSizePizza() {
     }
   });
 
-  // Se nenhum elemento de tamanho da pizza foi selecionado, seleciona o primeiro por padrão
+  // Se nenhum elemento de tamanho da pizza foi selecionado, seleciona por padrão
   if (noPizzaSizeSelected && pizzaSizeInputs.length > 0) {
     pizzaSizeInputs[2].checked = true;
   }

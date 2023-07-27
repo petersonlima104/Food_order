@@ -16,6 +16,13 @@ var flavorPrices = {
   "Chocolate Branco": 0.0,
 };
 
+var borderPrices = {
+  "Sem Borda": 0.0,
+  "Borda de Catupiry": 5.0,
+  "Borda de Chocolate": 5.0,
+  "Borda de Doce de Leite": 5.0,
+};
+
 var drinkPrices = {
   Sem_bebida: 0.0,
   "Coca-cola 2 litros": 12.0,
@@ -41,6 +48,7 @@ function removeItemFromCart(item) {
     return (
       cartItem.size === item.size &&
       arraysEqual(cartItem.flavors, item.flavors) &&
+      arraysEqual(cartItem.border, item.border) &&
       arraysEqual(cartItem.drinks, item.drinks)
     );
   });
@@ -73,6 +81,11 @@ function renderCartItems(items) {
       "Sabores: " + (item.flavors ? item.flavors.join(", ") : "N/A");
     itemContent.appendChild(pizzaFlavors);
 
+    var pizzaBorder = document.createElement("p");
+    pizzaBorder.textContent =
+      "Borda: " + (item.border ? item.border.join(", ") : "N/A");
+    itemContent.appendChild(pizzaBorder);
+
     var drinks = document.createElement("p");
     drinks.textContent =
       "Bebidas: " + (item.drinks ? item.drinks.join(", ") : "N/A");
@@ -104,6 +117,12 @@ function calculateTotalPrice(item) {
   if (item.flavors) {
     item.flavors.forEach(function (flavor) {
       totalPrice += flavorPrices[flavor];
+    });
+  }
+
+  if (item.border) {
+    item.border.forEach(function (border) {
+      totalPrice += borderPrices[border];
     });
   }
 
@@ -153,25 +172,27 @@ function updateCartItemCount() {
 }
 
 function createWhatsAppMessage(cartItemsArray, totalPrice) {
-  var message = "Olá, gostaria de fazer o pedido com os seguintes itens:\n";
+  var message = "Olá, gostaria de fazer o pedido com os seguintes itens:\n\n";
 
   cartItemsArray.forEach(function (item, index) {
     var itemText =
-      "Item " +
+      "*Item " +
       (index + 1) +
-      ": Tamanho: " +
+      ":* Tamanho: " +
       item.size +
       ", Sabores: " +
       (item.flavors ? item.flavors.join(", ") : "N/A") +
+      ", Borda: " +
+      (item.border ? item.border.join(", ") : "N/A") +
       ", Bebidas: " +
       (item.drinks ? item.drinks.join(", ") : "N/A") +
-      ", Valor Total: R$" +
+      ", *Valor Total: R$ " +
       calculateTotalPrice(item).toFixed(2) +
-      "\n";
+      "*\n";
     message += itemText;
   });
 
-  message += "\nPreço Total: R$" + totalPrice;
+  message += "\n*Preço Total do Pedido: R$ " + totalPrice + "*";
 
   return encodeURIComponent(message);
 }
